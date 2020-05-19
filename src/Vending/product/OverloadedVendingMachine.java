@@ -1,31 +1,29 @@
 package Vending.product;
+
 public class OverloadedVendingMachine {
-     int ChocolateQty =10;
-    int softDrinkQty = 10;
+    Product product = new Product();
+    SoftDrink softDrink = new SoftDrink();
+    SaltySnack saltySnack = new SaltySnack();
+    Chocolate chocolate = new Chocolate();
+
      //add a constructor like this to you OverloadedVendingMachine class
     OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty) {
         // set the stockLevel instance variables for each product in the constructor
-        softDrinkQty = 10;
-        saltySnacksQty = 15;
-        chocolatesQty = 11;
-    }
-    public int softDrink(SoftDrink softDrink){
-        return softDrinkQty--;
-    }
-    public int boughtCount(SaltySnack saltySnack){
-        return ChocolateQty--;
+        this.softDrink.stockCount = softDrinkQty;
+        this.saltySnack.stockCount = saltySnacksQty;
+        this.chocolate.stockCount = chocolatesQty;
     }
 
-    public  void boughtCount(Product product){
-
-    }
 
     public static void main(String [] args){
      //OverloadedVendingMachine ovm = new OverloadedVendingMachine();
         SoftDrink softDrink =  new SoftDrink();
+        SaltySnack saltySnack =  new SaltySnack();
+       // OverloadedVendingMachine ovm = new OverloadedVendingMachine(softDrink,saltySnack,);
         softDrink.buy(new SoftDrink());
         softDrink.buy(new SoftDrink());
-        softDrink.buy(new SoftDrink());
+        saltySnack.buy(new SaltySnack());
+        saltySnack.buy(new SaltySnack());
     }
 
 }
