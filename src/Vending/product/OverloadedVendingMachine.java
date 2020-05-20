@@ -1,50 +1,68 @@
 package Vending.product;
 
 public class OverloadedVendingMachine {
-    static int product ;
-    static int softDrink ;
-    static int saltySnack;
-    static int chocolate ;
+    private  int chocolateCount;
+    private  int productCount;
+    private  int softDrinkCount ;
+    private  int saltySnackCount;
+//   int chocolateCount ;
     int stockCount;
      //add a constructor like this to you OverloadedVendingMachine class
     OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty) {
         // set the stockLevel instance variables for each product in the constructor
-        this.softDrink= softDrinkQty;
-        this.saltySnack = saltySnacksQty;
-        this.chocolate = chocolatesQty;
+        this.softDrinkCount= softDrinkQty;
+        this.saltySnackCount = saltySnacksQty;
+        this.chocolateCount = chocolatesQty;
     }
 
     public void buy(SoftDrink softDrink) {
 
-        stockCount++;
-        System.out.println("Bought soft drink " + this.stockCount);
+        softDrinkCount--;
+        System.out.println("Bought soft drink " + this.softDrinkCount);
     }
 
-    public int buy(SaltySnack saltySnack)
+    void buy(SaltySnack saltySnack)
     {
-        stockCount++;
-        System.out.println("Bought SaltySnack "+ this.stockCount);
-        return this.stockCount;
+        saltySnackCount--;
+        System.out.println("Bought SaltySnack "+ this.saltySnackCount);
+        //return this.stockCount;
     }
-    public int buy(Chocolate chocolate){
-        stockCount++;
-        System.out.println("Bought Chocolate "+ this.stockCount);
-        return this.stockCount;
+    void buy(Chocolate chocolate){
+        chocolateCount--;
+        System.out.println("Bought Chocolate "+ this.chocolateCount);
+        //return chocolate.stockCount;
     }
-    int buy(Product product) {
-        stockCount++;
+    void buy(Product product) {
+        productCount--;
         System.out.println("This is a product " + this.stockCount);
-        return this.stockCount;
+        //return this.productCount;
+    }
+    //addStock METHOD
+    void addStock(SoftDrink softDrink){
+        System.out.println("Softdrink added "+ this.softDrinkCount);
+        softDrinkCount++;
+    }
+    void addStock(SaltySnack saltySnack){
+        System.out.println("Salty snack added "+ this.saltySnackCount);
+        softDrinkCount++;
+    }
+    void addStock(Chocolate chocolate){
+        System.out.println("Chocolates added "+ this.chocolateCount);
+        chocolateCount++;
+    }
+    void addStock(Product product, int newStock){
+
     }
 
     public static void main(String [] args){
-        OverloadedVendingMachine vendingMachine = new OverloadedVendingMachine(softDrink, saltySnack, chocolate);
+        OverloadedVendingMachine ovm = new OverloadedVendingMachine(13, 15, 17);
 
-        vendingMachine.buy(new Product());
-        vendingMachine.buy(new SoftDrink());
-        vendingMachine.buy(new SoftDrink());
-        vendingMachine.buy(new Chocolate());
-        vendingMachine.buy(new SaltySnack());
+        ovm.buy(new SoftDrink());
+        ovm.buy(new SoftDrink());
+        ovm.buy(new Chocolate());
+        //ovm.buy(new SaltySnack());
+        ovm.addStock(new SaltySnack());
+
     }
 
 }
