@@ -1,12 +1,14 @@
 package Vending.product;
 
 public class SoftDrink {
-   int stockCount = 10;
+
+     int stockCount;
+
     public void buy(SoftDrink softDrink) {
-        System.out.println("Bought soft drink");
 
-         stockCount--;
+    }
 
-
+    private void getCount( ) {
+        stockCount--;
     }
 }
