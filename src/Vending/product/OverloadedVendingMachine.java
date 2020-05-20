@@ -2,9 +2,9 @@ package Vending.product;
 
 public class OverloadedVendingMachine {
     private  int chocolateCount;
-    private  int productCount;
     private  int softDrinkCount ;
     private  int saltySnackCount;
+    private  int productCount= chocolateCount + saltySnackCount + saltySnackCount;
 //   int chocolateCount ;
     int stockCount;
      //add a constructor like this to you OverloadedVendingMachine class
@@ -32,11 +32,13 @@ public class OverloadedVendingMachine {
         System.out.println("Bought Chocolate "+ this.chocolateCount);
         //return chocolate.stockCount;
     }
-    void buy(Product product) {
-        productCount--;
-        System.out.println("This is a product " + this.stockCount);
-        //return this.productCount;
+    public int buy(Product product) {
+       final int products = chocolateCount + saltySnackCount + saltySnackCount;
+
+        System.out.println("This is a product " + products);
+        return products;
     }
+
     //addStock METHOD
     void addStock(SoftDrink softDrink){
         System.out.println("Softdrink added "+ this.softDrinkCount);
@@ -54,9 +56,7 @@ public class OverloadedVendingMachine {
         System.out.println(chocolateCount);
     return chocolateCount;
     }
-    void addStock(Product product, int newStock){
 
-    }
 
     public static void main(String [] args){
         OverloadedVendingMachine ovm = new OverloadedVendingMachine(13, 15, 17);
@@ -71,6 +71,8 @@ public class OverloadedVendingMachine {
         ovm.addStock(new SaltySnack());
         ovm.addStock(new SaltySnack());
         ovm.addStock(new SaltySnack());
+
+        ovm.buy(new Product());
     }
 
 }
