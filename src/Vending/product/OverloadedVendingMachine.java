@@ -44,11 +44,11 @@ public class OverloadedVendingMachine {
     }
     void addStock(SaltySnack saltySnack){
         System.out.println("Salty snack added "+ this.saltySnackCount);
-        softDrinkCount++;
+      ++  saltySnackCount;
     }
     void addStock(Chocolate chocolate){
         System.out.println("Chocolates added "+ this.chocolateCount);
-        chocolateCount++;
+       ++ chocolateCount;
     }
     public int addChocolate(Chocolate chocolate){
         System.out.println(chocolateCount);
@@ -62,7 +62,9 @@ public class OverloadedVendingMachine {
         OverloadedVendingMachine ovm = new OverloadedVendingMachine(13, 15, 17);
 
         ovm.buy(new SoftDrink());
-        ovm.buy(new SoftDrink());
+        ovm.addStock(new SoftDrink());
+        ovm.addStock(new SoftDrink());
+        ovm.addStock(new SoftDrink());
         ovm.buy(new Chocolate());
         ovm.addChocolate(new Chocolate());
         ovm.buy(new SaltySnack());
