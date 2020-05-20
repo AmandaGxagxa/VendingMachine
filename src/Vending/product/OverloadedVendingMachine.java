@@ -14,40 +14,37 @@ public class OverloadedVendingMachine {
         this.chocolate = chocolatesQty;
     }
 
-//    public OverloadedVendingMachine( ) {
-//
-   // }
-
     public void buy(SoftDrink softDrink) {
 
         stockCount++;
-        System.out.println("Bought soft drink");
+        System.out.println("Bought soft drink " + this.stockCount);
     }
 
-
-    public void buy(SaltySnack saltySnack)
+    public int buy(SaltySnack saltySnack)
     {
         stockCount++;
-        System.out.println("Bought SaltySnack");
+        System.out.println("Bought SaltySnack "+ this.stockCount);
+        return this.stockCount;
     }
-    public  void buy(Chocolate chocolate){
+    public int buy(Chocolate chocolate){
         stockCount++;
-        System.out.println("Bought SaltySnack");
+        System.out.println("Bought Chocolate "+ this.stockCount);
+        return this.stockCount;
     }
-    void buy(Product product) {
+    int buy(Product product) {
         stockCount++;
-        System.out.println("This is a product");
+        System.out.println("This is a product " + this.stockCount);
+        return this.stockCount;
     }
 
     public static void main(String [] args){
-        OverloadedVendingMachine vendingMachine = new OverloadedVendingMachine();
-//Vending vending = new Vending()
-        SoftDrink softDrink =  new SoftDrink();
-        SaltySnack saltySnack =  new SaltySnack();
-        softDrink.buy(new SoftDrink());
-        softDrink.buy(new SoftDrink());
-        saltySnack.buy(new SaltySnack());
-        saltySnack.buy(new SaltySnack());
+        OverloadedVendingMachine vendingMachine = new OverloadedVendingMachine(softDrink, saltySnack, chocolate);
+
+        vendingMachine.buy(new Product());
+        vendingMachine.buy(new SoftDrink());
+        vendingMachine.buy(new SoftDrink());
+        vendingMachine.buy(new Chocolate());
+        vendingMachine.buy(new SaltySnack());
     }
 
 }
