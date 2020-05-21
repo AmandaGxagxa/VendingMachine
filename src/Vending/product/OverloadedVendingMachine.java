@@ -5,9 +5,7 @@ public class OverloadedVendingMachine {
     private  int softDrinkCount ;
     private  int saltySnackCount;
     private  int productCount= chocolateCount + saltySnackCount + saltySnackCount;
-//   int chocolateCount ;
-   // int stockCount;
-     //add a constructor like this to you OverloadedVendingMachine class
+
     OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty) {
         // set the stockLevel instance variables for each product in the constructor
         this.softDrinkCount= softDrinkQty;
@@ -30,7 +28,6 @@ public class OverloadedVendingMachine {
     void buy(Chocolate chocolate){
         chocolateCount--;
         System.out.println("Bought Chocolate "+ this.chocolateCount);
-        //return chocolate.stockCount;
     }
     //counte methods
     public int getSoftDrinkCount(SoftDrink softDrink) {
@@ -49,12 +46,6 @@ public class OverloadedVendingMachine {
         //System.out.println("Bought Chocolate "+ this.chocolateCount);
 
     }
-//    public int buy() {
-//        //final int products = chocolateCount + saltySnackCount + saltySnackCount;
-//
-//        System.out.println("This is a product " + this.productCount);
-//        return productCount--;
-//    }
     public int getStock(Product product) {
        final int products = chocolateCount + saltySnackCount + saltySnackCount;
 //        if (product instanceof SoftDrink){
