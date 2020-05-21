@@ -6,7 +6,7 @@ public class OverloadedVendingMachine {
     private  int saltySnackCount;
     private  int productCount= chocolateCount + saltySnackCount + saltySnackCount;
 //   int chocolateCount ;
-    int stockCount;
+   // int stockCount;
      //add a constructor like this to you OverloadedVendingMachine class
     OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty) {
         // set the stockLevel instance variables for each product in the constructor
@@ -32,15 +32,34 @@ public class OverloadedVendingMachine {
         System.out.println("Bought Chocolate "+ this.chocolateCount);
         //return chocolate.stockCount;
     }
-    public int buy() {
-        //final int products = chocolateCount + saltySnackCount + saltySnackCount;
+    //counte methods
+    public int getSoftDrinkCount(SoftDrink softDrink) {
 
-        System.out.println("This is a product " + this.productCount);
-        return productCount--;
+        return softDrinkCount--;
+
     }
+
+    public int getSaltySnackCount(SaltySnack saltySnack)
+    {
+      return   saltySnackCount--;
+
+    }
+    public int getChocolateCount(Chocolate chocolate){
+       return chocolateCount--;
+        //System.out.println("Bought Chocolate "+ this.chocolateCount);
+
+    }
+//    public int buy() {
+//        //final int products = chocolateCount + saltySnackCount + saltySnackCount;
+//
+//        System.out.println("This is a product " + this.productCount);
+//        return productCount--;
+//    }
     public int getStock(Product product) {
        final int products = chocolateCount + saltySnackCount + saltySnackCount;
-
+//        if (product instanceof SoftDrink){
+//
+//        }
         System.out.println("This is a product " + products);
         return products;
     }
@@ -59,7 +78,7 @@ public class OverloadedVendingMachine {
        ++ chocolateCount;
     }
     public int addChocolate(Chocolate chocolate){
-        System.out.println(chocolateCount);
+      //  System.out.println(chocolateCount);
     return chocolateCount;
     }
 
