@@ -95,4 +95,13 @@ public class TestOvm {
 //        ovm.addStock(new SoftDrink());
         assertEquals(38,ovm.getStock(new Product()));
     }
+    @Test
+    public void shouldAddThreeOfEachProductAnd1SaltySnackAnd1SoftDrink (){
+        OverloadedVendingMachine ovm = new OverloadedVendingMachine(2, 10, 17);
+        Product product =new Product();
+        ovm.addStock(new Product());
+        ovm.addStock(new SoftDrink());
+        ovm.addStock(new SaltySnack());
+        assertEquals(40,ovm.getStock(new Product()));
+    }
 }
