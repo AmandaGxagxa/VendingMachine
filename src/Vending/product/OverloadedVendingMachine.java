@@ -32,6 +32,7 @@ public class OverloadedVendingMachine {
         else
         {
             System.out.println("We are running out of Salty Snacks");
+            saltySnacksQty= 0;
         }
 
     }
@@ -43,6 +44,7 @@ public class OverloadedVendingMachine {
         else
         {
             System.out.println("We are running out of Chocolates");
+            chocolatesQty =0;
         }
 
     }
@@ -54,6 +56,7 @@ public class OverloadedVendingMachine {
             saltySnacksQty--;
         } else {
             System.out.println("We are running out of stock");
+            saltySnacksQty = 0;
         }
 
     }
