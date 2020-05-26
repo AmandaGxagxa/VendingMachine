@@ -1,9 +1,10 @@
 package Vending.product;
 
 public class OverloadedVendingMachine {
-    private  int chocolatesQty;
-    private  int softDrinkQty ;
-    private  int saltySnacksQty;
+
+    private  int chocolatesQty = 0;
+    private  int softDrinkQty = 0;
+    private  int saltySnacksQty =0;
    // private  int productCount= ;
 
     OverloadedVendingMachine(int softDrinkQty, int saltySnacksQty, int chocolatesQty) {
@@ -60,7 +61,27 @@ public class OverloadedVendingMachine {
         }
 
     }
+    public void buy(Product product, int stockBought) {
 
+        if (softDrinkQty >= 1 && saltySnacksQty >= 1 && chocolatesQty >= 1) {
+            System.out.println("Three different products bought " + this.chocolatesQty);
+            chocolatesQty-=stockBought;
+            softDrinkQty-=stockBought;
+            saltySnacksQty-=stockBought;
+
+
+        } else {
+            System.out.println("We are running out of stock");
+            saltySnacksQty = 0;
+        }
+
+    }
+    public void buy(SaltySnack snack, int qty){
+
+        saltySnacksQty -=qty;
+        System.out.println("I am buying " + qty + "snacks");
+
+    }
     //addStock METHOD
     void addStock(SoftDrink softDrink){
         softDrinkQty++;
@@ -84,6 +105,12 @@ public class OverloadedVendingMachine {
 
 
     }
+    public void addStock(SaltySnack saltySnack, int qty){
+
+        saltySnacksQty +=qty;
+        System.out.println("I am adding " + qty + " snacks.");
+
+    }
         //get stock methods
     public int getStock(SoftDrink softDrink) {
         return   softDrinkQty;
@@ -91,18 +118,20 @@ public class OverloadedVendingMachine {
     public int getStock(SaltySnack saltySnack) {
         return   saltySnacksQty;
     }
-    public int getStock(Chocolate chocolate){
-
-        return chocolatesQty;
-    }
+    public int getStock(Chocolate chocolate){ return chocolatesQty;}
     public int getStock(Product product){
         return chocolatesQty +saltySnacksQty + softDrinkQty;
     }
 
+
+
     public static void main(String [] args){
         OverloadedVendingMachine ovm = new OverloadedVendingMachine(13, 15, 17);
-
+        //OverloadedVendingMachine ovm1 = new OverloadedVendingMachine(13, 15, 17, qty);
         ovm.buy(new SoftDrink());
+        ovm.buy(new SaltySnack(),3);
+        ovm.addStock(new SaltySnack(),4);
+        ovm.addStock(new SoftDrink());
         ovm.addStock(new SoftDrink());
         ovm.addStock(new SoftDrink());
         ovm.addStock(new SoftDrink());

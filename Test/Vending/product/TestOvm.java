@@ -104,4 +104,19 @@ public class TestOvm {
         ovm.addStock(new SaltySnack());
         assertEquals(40,ovm.getStock(new Product()));
     }
+    @Test
+    public void shouldReturnBuyingProducts (){
+        OverloadedVendingMachine ovm = new OverloadedVendingMachine(2, 10, 17);
+        Product product =new Product();
+        ovm.buy(new SaltySnack(),5);
+
+        assertEquals(24,ovm.getStock(new Product()));
+    }
+    @Test
+    public void shouldReturnTheTotalNumberOfAddedProducts (){
+        OverloadedVendingMachine ovm = new OverloadedVendingMachine(2, 10, 17);
+        Product product =new Product();
+        ovm.addStock(new SaltySnack(),5);
+        assertEquals(34,ovm.getStock(new Product()));
+    }
 }
