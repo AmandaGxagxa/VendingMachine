@@ -1,6 +1,6 @@
 package Vending.product;
 
-public class SoftDrink {
+public class SoftDrink extends Product {
 
      int stockCount;
 

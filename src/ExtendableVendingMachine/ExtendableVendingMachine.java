@@ -1,5 +1,10 @@
 package ExtendableVendingMachine;
 
+import Vending.product.Chocolate;
+import Vending.product.Product;
+import Vending.product.SaltySnack;
+import Vending.product.SoftDrink;
+
 public class ExtendableVendingMachine {
     int softDrinkQty=0;
     int saltySnackQty = 0;
@@ -28,7 +33,8 @@ public class ExtendableVendingMachine {
     public static void main(String [] args){
         ExtendableVendingMachine evm = new ExtendableVendingMachine();
         evm.buy(new SoftDrink());
-//        System.out.printf(evm.buy(new SoftDrink()));
+        evm.buy(new SaltySnack());
+     //System.out.printf(buy(new SoftDrink()));
 
 
     }
