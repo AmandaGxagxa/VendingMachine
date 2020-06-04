@@ -70,7 +70,7 @@ public class TestEvm {
         assertEquals(15,evm.getStock(new Product()));
     }
     @Test
-    public void itShouldAddNothingOnProduct(){
+    public void itShouldAddNothingOnProductStock(){
         ExtendableVendingMachine evm = new ExtendableVendingMachine(2,6,10);
         evm.addStock(new Product() );
 
@@ -85,7 +85,7 @@ public class TestEvm {
         assertEquals(18,evm.getStock(new Product()));
     }
     @Test
-    public void itShouldReturnAddedStockAndRemainingStock(){
+    public void itShouldAddNothingOnTheStockLevel(){
         ExtendableVendingMachine evm = new ExtendableVendingMachine(2,6,10);
         evm.addStock(new Product(),2 );
 

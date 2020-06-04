@@ -60,10 +60,7 @@ public class ExtendableVendingMachine {
         } else if(product instanceof Chocolate){
             chocolateQty +=3;
             System.out.println("Adding "+ this.chocolateQty + " chocolates");
-        }else if(product instanceof Product){
-            softDrinkQty =softDrinkQty+ 0;
-            saltySnackQty += 0;
-            chocolateQty +=0;
+        }else{
             System.out.println("Adding nothing to the stock");
         }
 
@@ -84,11 +81,25 @@ public class ExtendableVendingMachine {
         if(product instanceof SoftDrink){
             softDrinkQty =softDrinkQty - qty;
         }
+        if(product instanceof SaltySnack){
+            saltySnackQty =saltySnackQty - qty;
+        }
+        if(product instanceof Chocolate){
+            chocolateQty =chocolateQty - qty;
+        }
     }
     public void addStock(Product product, int qty){
         if(product instanceof SoftDrink){
             softDrinkQty =softDrinkQty + qty;
             System.out.println(qty + "soft drinks added");
+        }
+        if(product instanceof SaltySnack){
+            saltySnackQty =saltySnackQty + qty;
+            System.out.println(qty + "Salty Snacks added");
+        }
+        if(product instanceof Chocolate){
+            chocolateQty =chocolateQty + qty;
+            System.out.println(qty + "Chocolates added");
         }
     }
 
